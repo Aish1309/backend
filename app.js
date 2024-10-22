@@ -6,6 +6,7 @@ const app = express();
 var http = require('http').Server(app);
 
 const paymentRoute = require('./routes/paymentRoute');
+const paymentController=require('./controllers/paymentController');
 
 // Firebase Admin
 const admin = require('./firebaseAdmin');
@@ -21,6 +22,7 @@ app.use(cors({
 app.use(cookieParser());  // Parse cookies
 app.use(express.json());  // To parse JSON bodies
 app.use('/api', paymentRoute);
+
 
 // Middleware to verify session cookies
 app.use(async (req, res, next) => {

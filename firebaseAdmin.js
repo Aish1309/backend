@@ -7,7 +7,12 @@ const serviceAccount = require('./config/serviceAccountKey.json')
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount), // or specify the path to the service account key JSON file
   projectId:'trafyai-loginsignup',
-  databaseURL: '"https://trafyai-loginsignup-default-rtdb.firebaseio.com",', // replace with your Firebase Realtime Database URL
+  databaseURL: 'https://trafyai-loginsignup-default-rtdb.firebaseio.com/',
+  storageBucket: 'trafyai-loginsignup.appspot.com' 
 });
 
-module.exports = admin;
+module.exports =
+  admin;
+  // getAuth: admin.auth,
+  // getStorage: admin.storage,
+  // database: admin.database(),
