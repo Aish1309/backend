@@ -1,0 +1,12 @@
+name: custom environment variable
+
+on: push
+
+env:
+  SUBSCRIBE: subscribe
+
+Jobs:
+  channel:
+    runs-on: ubuntu-latest
+    env:
+      LIKE: this is env file
