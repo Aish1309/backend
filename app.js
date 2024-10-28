@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');  // To parse cookies
 const app = express();
 var http = require('http').Server(app);
 
+
 const paymentRoute = require('./routes/paymentRoute');
 const paymentController=require('./controllers/paymentController');
 
@@ -13,7 +14,7 @@ const admin = require('./firebaseAdmin');
 
 // Use CORS to allow requests from your frontend
 app.use(cors({
-    origin: ['http://localhost:3000', 'http://localhost:3001','https://trafywebsite-backend-865611889264.us-central1.run.app', 'https://trafyai.com'], // Allow both local and GCP origins
+    origin: ['http://localhost:3000', 'http://localhost:3001','http://localhost:3002','https://trafywebsite-backend-865611889264.us-central1.run.app', 'https://trafyai.com'], // Allow both local and GCP origins
     methods: 'GET,POST',
     allowedHeaders: 'Content-Type,Authorization',
     credentials: true, // Allow credentials (cookies)
