@@ -15,5 +15,5 @@ jobs:
         with :
           node-version: 20
       - run: npm ci
-      - run: nodemon test.yml
+      - run: nodemon app.js
       - run: npm run build
