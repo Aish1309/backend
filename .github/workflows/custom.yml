@@ -1,12 +1,19 @@
-name: custom environment variable
+name: Test Project
 
-on: push
+on:
+  pull_request:
+    branches:
+      - main
 
-env:
-  SUBSCRIBE: subscribe
-
-Jobs:
-  channel:
+jobs:
+  test:
     runs-on: ubuntu-latest
-    env:
-      LIKE: this is env file
+    container:
+      image: node:20
+    steps: 
+      - uses: actions/checkout@v3
+        with :
+          node-version: 20
+      - run: npm ci
+      - run: nodemon test.yml
+      - run: npm run build
